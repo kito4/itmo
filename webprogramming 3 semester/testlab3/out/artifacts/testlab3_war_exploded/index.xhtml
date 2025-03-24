@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: a11
+  Date: 27.12.2022
+  Time: 19:14
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>test</title>
+</h:head>
+
+    <h:outputLabel value="Hello, world"/>
+    <h:body>
+        <p>Nikita Manzhikov; P32102; 15600</p>
+
+        <h3><h:outputText value="It's #{now.dateTime} now."/></h3>
+        <h:outputText value="#{hellow1.sayWelcome}" />
+
+        <br/>
+        <h:form>
+            <h:commandButton action = "#{navigation.processPage()}" value = "Go to the main page" />
+        </h:form>
+
+    </h:body>
+
+
+</html>

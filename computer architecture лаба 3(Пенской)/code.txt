@@ -1,0 +1,48 @@
+    .data
+
+input_addr:        .word 0x80       ; Адрес ввода, где хранится значение 'n'
+output_addr:       .word 0x84       ; Адрес вывода, куда будет записан результат
+
+    .text
+
+_start:
+    lui      t0, input_addr          ; int * input_addr_const = 0x00;
+    addi     t0, t0, input_addr      ; // t0 <- 0x00;
+
+    lw       t0, 0(t0)               ; int input_addr = *input_addr_const;
+                                     ; // t0 <- *t0;
+
+    lw       t1, 0(t0)               ; int n = *input_addr;
+                                     ; // t1 <- *t0;
+
+fibonacci_check:
+    li       t2, 0                   ; int a = 0;
+    li       t3, 1                   ; int b = 1;
+    beqz     t1, fibonacci_return_zero ; if (n == 0) перейти к возврату 0
+
+fibonacci_loop:
+    addi     t1, t1, -1              ; n = n - 1
+    beqz     t1, fibonacci_end       ; if (n == 0), выйти из цикла
+    add      t4, t2, t3              ; int c = a + b;
+    mv       t2, t3                  ; a = b;
+    mv       t3, t4                  ; b = c;
+    j        fibonacci_loop          ; перейти к началу цикла
+
+fibonacci_return_zero:
+    mv       t2, t2                  ; сохранить 0 в t2 для n == 0
+    j        fibonacci_output        ; перейти к записи результата
+
+fibonacci_end:
+    mv       t2, t3                  ; сохранить результат в t2 (текущее значение b)
+
+fibonacci_output:
+    lui      t0, output_addr         ; int * output_addr_const = 0x04;
+    addi     t0, t0, output_addr     ; // t0 <- 0x04;
+
+    lw       t0, 0(t0)               ; int output_addr = *output_addr_const;
+                                     ; // t0 <- *t0;
+
+    sw       t2, 0(t0)               ; *output_addr_const = результат;
+                                     ; // *t0 = t2;
+
+    halt

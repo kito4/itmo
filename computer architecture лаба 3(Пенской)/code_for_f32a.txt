@@ -1,0 +1,39 @@
+    .data
+input_addr:        .word 0x80   \ адрес для входного значения
+output_addr:       .word 0x84   \ адрес для вывода результата
+alligment:         .word '................................'
+
+    .text
+
+_start:
+    @p input_addr  a! @            \ загружаем число n из памяти
+    count_ones
+    @p output_addr a! !            \ сохраняем результат
+    halt
+
+count_ones:
+    lit 0                          \ n:acc:[0], начинаем с нуля (счетчик единичных битов)
+count_ones_loop:
+    dup                             \ n:n:acc:[]
+    lit 0                           \ 0:acc:n:[]
+    if count_ones_finish           \ если n == 0, выходим из цикла
+
+    dup                             \ дублируем n
+    lit 1                           \ создаем 1 для побитовой операции AND
+    and                             \ проверяем младший бит (n & 1)
+    if count_ones_increment        \ если младший бит равен 1, увеличиваем счетчик
+    drop                            \ если нет, просто удаляем
+
+count_ones_increment:
+    lit 1                           \ увеличиваем счетчик на 1
+    +                               \ счетчик + 1
+    drop                            \ очищаем стек
+
+    over                            \ n:n:acc
+    lit 1                           \ создаем 1 для сдвига
+    rshift                          \ сдвигаем n на 1 бит вправо
+    count_ones_loop                \ продолжаем цикл
+
+count_ones_finish:
+    drop                            \ завершение, удаляем все с стека
+    ;                               \ конец функции

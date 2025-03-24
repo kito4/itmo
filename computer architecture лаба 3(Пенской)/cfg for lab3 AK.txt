@@ -1,0 +1,30 @@
+limit: 50                           
+memory_size: 0x90                   
+input_streams:
+  0x80: [5]                         
+  0x84: []                          
+reports:
+  - name: Step-by-step log          
+    slice: all
+    filter:
+      - instruction
+      - state
+    inspector:
+      - - [label, T0]
+        - [register, T0]
+        - [label, T1]
+        - [register, T1]
+        - T2
+        - [register, T2]
+      - ["0x80", [number_io_stream, 0x0080]]
+      - ["0x84", [number_io_stream, 0x0084]]
+  - name: Check results            
+    slice: last
+    filter:
+      - state
+    inspector:
+      - [[label, "numio[0x80]:"], [number_io_stream, 0x0080]]
+      - [[label, "numio[0x84]:"], [number_io_stream, 0x0084]]
+    assert: |
+      numio[0x80]: [] >>> []        
+      numio[0x84]: [] >>> [5]       

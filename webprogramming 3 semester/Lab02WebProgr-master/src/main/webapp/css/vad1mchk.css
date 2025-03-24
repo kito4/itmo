@@ -1,0 +1,207 @@
+/*
+	Style by Vad1mChK (https://github.com/Vad1mChK) aka Vadim Chaykin
+	Do not steal!
+*/
+@font-face {
+	font-family: Palatino;
+	src: url("../fonts/pala.ttf");
+}
+
+@font-face {
+	font-family: Palatino;
+	font-weight: bold;
+	src: url("../fonts/palab.ttf");
+}
+
+@font-face {
+	font-family: Palatino;
+	font-style: italic;
+	src: url("../fonts/palai.ttf");
+}
+
+@font-face {
+	font-family: Palatino;
+	font-weight: bold;
+	font-style: italic;
+	src: url("../fonts/palabi.ttf");
+}
+
+body {
+	background-image: linear-gradient(to top, #FFF2BD, #F4D797, #EBB58A, #DA7F7D, #B5728E, #776E99);
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 16px;
+}
+
+header, footer, .black-box {
+	width: 75%;
+	margin: 64px auto;
+	padding: 32px 64px;
+	border-radius: 64px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	text-align: justify;
+}
+
+header {
+	font-family: Palatino, serif;
+	font-size: 18px;
+	color: #cde;
+}
+
+.collapsible {
+	background: inherit;
+	border: 2px solid #fff;
+}
+
+h1 {
+	text-align: center;
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+.centered {
+	text-align: center;
+}
+
+a {
+	color: #77bbff;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #cc77ff;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+a:hover, a:active {
+	color: #ff7777;
+}
+
+.no-highlight-link, .no-highlight-link:visited, .no-highlight-link:hover, .no-highlight-link:active {
+	color: white;
+	font-weight: bold;
+}
+
+.screen {
+	mix-blend-mode: screen;
+	border: 2px solid white;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.necessary::before {
+	font-size: larger;
+	font-weight: bold;
+	color: red;
+	content: "*";
+}
+
+input {
+	margin-bottom: 24px;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 4px;
+	background: rgba(0, 0, 0, 0.5);
+	border: 2px solid white;
+	color: inherit;
+	min-width: 384px;
+}
+
+input[type="submit"], input[type="reset"], button {
+	margin: 16px 0 16px 0;
+	padding: 16px;
+	background: #003f7f;
+	border-radius: 64px;
+	font-weight: bold;
+	border: 2px solid white;
+	color: inherit;
+	text-align: center;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+	background: #cf3f0f;
+}
+
+#plot {
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+	cursor: crosshair;
+}
+
+#plot:hover {
+	opacity: 0.8;
+}
+
+table {
+	margin-top: 8px;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	border: 2px solid white;
+	padding: 16px;
+}
+
+#previous-results, #previous-results th, #previous-results td {
+	background: #eee;
+	border: 2px solid black;
+	color: black;
+	font-style: italic;
+}
+
+#previous-results th {
+	text-align: center;
+	background: #aaa;
+	font-style: normal;
+}
+
+#previous-results tr:nth-child(2n) td {
+	background: #ccc;
+}
+
+header + div h2::after {
+	color: #ff7;
+	content: " =)";
+	font-size: smaller;
+}
+
+header + div > ul > li {
+	color: #eee;
+	font-style: italic;
+	font-size: inherit;
+}
+
+.error {
+	font-weight: bold;
+	color: #f77;
+}
+
+#go-home {
+	background: #0000007f;
+}
+
+.based, .cringe {
+	font-weight: bold;
+}
+
+.based {
+	color: seagreen !important;
+}
+
+.cringe {
+	color: crimson !important;
+}

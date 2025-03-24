@@ -1,0 +1,13 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <defs>
+            <mask id="cut-away">
+                <path id="svg_2" d="m5.66945,113.68511l58.33055,-102.07843l58.33055,102.07843l-116.6611,0z" stroke="#000000" fill="#ffffff"/>
+                <path id="svg_4" d="m16.16895,107.64374l47.83105,-83.70431l47.83105,83.70431l-95.6621,0z"/>
+            </mask>
+        </defs>
+        <line id="svg_2" y2="84.15958" x2="64.16666" y1="43.99484" x1="64.16666" fill-opacity="0" stroke-width="10" stroke="#ff5656" fill="none"/>
+        <ellipse stroke-opacity="0" ry="5.16642" rx="5.16642" id="svg_3" cy="95.99234" cx="64" stroke-width="0" stroke="#000000" fill="#ff5656"/>
+        <path stroke-opacity="0" stroke-width="0" id="svg_1" d="m5.66945,113.68511l58.33055,-102.07843l58.33055,102.07843l-116.6611,0z" stroke="#000000" fill="#ff5656" mask="url(#cut-away)"/>
+    </g>
+</svg>
