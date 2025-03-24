@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: lab2
-Class-Path: /Users/kito/Downloads/itmo-main-4/lab2/classes/Pokemon.jar
